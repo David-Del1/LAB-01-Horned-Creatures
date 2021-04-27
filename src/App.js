@@ -1,6 +1,10 @@
 import { Component } from 'react';
+import Header from './Header';
+import Footer from './Footer';
 import './App.css';
 import React from 'react';
+import CreatureList from './CreatureList';
+import creatures from './creature';
 
 class App extends Component {
 
@@ -8,9 +12,19 @@ class App extends Component {
     return (
       <div className="App">
   
-        My React App...
+        <Header/>
+
+        <main>
+          <CreatureList creature={creatures}/>
+        </main>
+
+        <Footer/>
       
       </div>
+
+
+
+      
     );
   }
 
