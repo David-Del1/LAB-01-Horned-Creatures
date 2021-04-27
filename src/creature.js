@@ -105,14 +105,14 @@ const images = [
   },
   {
     url:
-        'https://cdn.modernfarmer.com/wp-content/uploads/2014/08/28476658_9c97f35096_o.jpg',
+        'creature-images/uros-dencic-beast.jpg',
     title: 'Mouflon',
     description: 'Those horns though',
     keyword: 'mouflon',
     horns: 2
   },
   {
-    url: 'https://cdn.modernfarmer.com/wp-content/uploads/2014/08/addax.jpg',
+    url: 'creature-images/goat.jpg',
     title: 'Addax',
     description:
         "This guy is basically extinct but survives well in captivity, so they're frequently found in zoos",
@@ -129,7 +129,7 @@ const images = [
   },
   {
     url:
-        'https://cdn.modernfarmer.com/wp-content/uploads/2014/08/chameleon.jpg',
+        'creature-images/creature.jpg',
     title: "Happy Jackson's Chameleon",
     description: 'These are really common in Hawaii',
     keyword: 'chameleon',
