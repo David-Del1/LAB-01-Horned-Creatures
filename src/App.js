@@ -3,7 +3,7 @@ import Header from './Header';
 // import Footer from './Footer';
 import './App.css';
 import CreatureList from './CreatureList';
-import creaturesData from './Creature.js';
+import creaturesData from './data.js';
 import CreatureSearch from './CreatureSearch';
 
 const creatureTypes = [...new Set(creaturesData.map(c => c.type))];
