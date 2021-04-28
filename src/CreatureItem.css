@@ -1,0 +1,26 @@
+.creature-item {
+  list-style: none;
+  border: 1px solid darkgray;
+  background: white;
+  padding: 10px;
+  display: grid;
+  grid-template-rows: 30px 80px 20px;
+  grid-gap: 10px;
+  justify-items: center;
+}
+
+.creature-item h2 {
+  margin: 0;
+}
+
+.creature-item img {
+  height: 50%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.creature-item div {
+  padding: 5px;
+  margin: 0;
+  height: 5px;
+}

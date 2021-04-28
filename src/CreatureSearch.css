@@ -1,0 +1,30 @@
+.creature-search {
+  background: darkgray;
+  padding: 10px 20px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.creature-search input {
+  width: 200px;
+  height: 30px;
+  outline: 0;
+  flex-grow: 2;
+}
+
+.creature-search select {
+  width: 150px;
+  height: 36px;
+  flex-grow: 1;
+}
+
+.creature-search button {
+  height: 36px;
+  width: 36px;
+  cursor: pointer;
+}
