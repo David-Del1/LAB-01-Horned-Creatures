@@ -5,7 +5,6 @@ export default class CreatureSearch extends Component {
   state = {
     nameFilter: '',
     sortField: '',
-    typeFilter: ''
   }
 
   handleNameChange = 
@@ -15,10 +14,6 @@ export default class CreatureSearch extends Component {
 
   handleSearchChange = ({ target }) => {
     this.setState({ sortField: target.value });
-  }
-
-  handleTypeChange = ({ target }) => {
-    this.setState({ typeFilter: target.value });
   }
 
   handleSubmit = (e) => {
@@ -33,8 +28,7 @@ export default class CreatureSearch extends Component {
   }
 
   render() {
-    const { nameFilter, sortField, typeFilter } = this.state;
-    const { types } = this.props;
+    const { nameFilter, sortField } = this.state;
     return (
       <form className="creature-search" onSubmit={this.handleSubmit}>
 
@@ -52,17 +46,6 @@ export default class CreatureSearch extends Component {
           <option value=''>Sort...</option>
           <option value='name'>by name</option>
           <option value='horns'>by horns</option>
-        </select>
-
-        <select
-          name='typeFilter'
-          value={typeFilter}
-          onChange={this.handleTypeChange}
-        >
-          <option value=''>All</option>
-          {types.map(type => (
-            <option key={type} value={type}>{type}</option>
-          ))}
         </select>
 
         <button>🔎</button>
