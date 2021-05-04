@@ -1,32 +1,36 @@
 import React, { Component } from 'react';
 import Header from './Header';
-// import Footer from './Footer';
+import Footer from './Footer';
 import './App.css';
 import CreatureList from './CreatureList';
-import creaturesData from './data.js';
 import CreatureSearch from './CreatureSearch';
+import request from 'superagent';
 
-const creatureTypes = [...new Set(creaturesData.map(c => c.type))];
+
+
+
+
+
+// const creatureTypes = [...new Set(creaturesData.map(c => c.type))];
 
 class App extends Component {
   state = {
-    creatures: creaturesData
+    creatures: []
   }
 
-  handleSearch = ({ nameFilter, typeFilter, sortField }) => {
-    const nameRegex = new RegExp(nameFilter, 'i');
+  componentDidMount() {
+    this.handleSearch({});
+  }
 
-    const searchedData = creaturesData
+  handleSearch = async ({ nameFilter, typeFilter, sortField }) => {
+    const nameRegex = new RegExp(nameFilter, 'i');
+    const response = await request.get('https://lab-06-enjh.herokuapp.com/api/creatures');
+    const searchedData = response.body
       .filter(creature => {
         return !nameFilter || creature.title.match(nameRegex);
       })
       .filter(creature => {
         return !typeFilter || creature.type === typeFilter;
-      })
-      .sort((a, b) => {
-        if (a[sortField] < b[sortField]) return -1;
-        if (a[sortField] > b[sortField]) return 1;
-        return 0;
       });
 
     this.setState({ creatures: searchedData });
@@ -40,13 +44,13 @@ class App extends Component {
   
         <Header />
 
-        <CreatureSearch types={creatureTypes} onSearch={this.handleSearch}/>
+        <CreatureSearch onSearch={this.handleSearch}/>
 
         <main>
           <CreatureList creature={creatures} />
         </main>
 
-        {/* <Footer /> */}
+        <Footer />
       
       </div>    
     );
